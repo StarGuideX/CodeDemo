@@ -7,14 +7,17 @@ namespace CodeDemo.DesignPattern._07Bridge
     /// <summary>
     /// Abstraction
     /// </summary>
-    public class RemoteControl
+    public abstract class RemoteControl
     {
+        /// <summary>
+        /// Implementor
+        /// </summary>
         protected TV _tv;
+
         public RemoteControl(TV tv)
         {
             _tv = tv;
         }
-
         public virtual void On()
         {
             _tv.On();
@@ -23,9 +26,9 @@ namespace CodeDemo.DesignPattern._07Bridge
         {
             _tv.Off();
         }
-        public virtual void SetChannel()
+        public virtual void SetChannel(Channel channel)
         {
-            _tv.TuneChannel();
+            _tv.TuneChannel(channel);
         }
     }
 }

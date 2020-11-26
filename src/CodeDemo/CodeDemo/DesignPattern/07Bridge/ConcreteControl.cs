@@ -7,7 +7,7 @@ namespace CodeDemo.DesignPattern._07Bridge
     /// <summary>
     /// RefinedAbstraction
     /// </summary>
-    public class ConcreteControl : RemoteControl
+    public abstract class ConcreteControl : RemoteControl
     {
         public ConcreteControl(TV tv) : base(tv) 
         {
@@ -23,9 +23,11 @@ namespace CodeDemo.DesignPattern._07Bridge
             _tv.Off();
         }
 
-        //public override void SetChannel(int )
-        //{
-        //    _tv.SetChannel();
-        //}
+        public override void SetChannel(Channel channel)
+        {
+            _tv.TuneChannel(channel);
+        }
+        public abstract void NextChannel();
+        public abstract void PreviousChannel();
     }
 }
