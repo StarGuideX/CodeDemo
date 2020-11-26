@@ -4,23 +4,26 @@ using System.Text;
 
 namespace CodeDemo.DesignPattern._07Bridge
 {
-    public abstract class RemoteControl : TV
+    /// <summary>
+    /// Abstraction
+    /// </summary>
+    public class RemoteControl
     {
         protected TV _tv;
-        public RemoteControl(TV tv) 
+        public RemoteControl(TV tv)
         {
-            _tv = tv;    
+            _tv = tv;
         }
 
-        public void On() 
+        public virtual void On()
         {
             _tv.On();
         }
-        public void Off() 
+        public virtual void Off()
         {
             _tv.Off();
         }
-        public void SetChannel() 
+        public virtual void SetChannel()
         {
             _tv.TuneChannel();
         }

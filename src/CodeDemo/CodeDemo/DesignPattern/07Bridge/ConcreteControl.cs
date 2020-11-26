@@ -12,5 +12,20 @@ namespace CodeDemo.DesignPattern._07Bridge
         public ConcreteControl(TV tv) : base(tv) 
         {
         }
+
+        public override void On()
+        {
+            _tv.On();
+        }
+
+        public override void Off()
+        {
+            _tv.Off();
+        }
+
+        //public override void SetChannel(int )
+        //{
+        //    _tv.SetChannel();
+        //}
     }
 }

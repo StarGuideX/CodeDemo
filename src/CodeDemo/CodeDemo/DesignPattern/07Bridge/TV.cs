@@ -4,10 +4,13 @@ using System.Text;
 
 namespace CodeDemo.DesignPattern._07Bridge
 {
-    public interface TV
+    /// <summary>
+    /// Implementor
+    /// </summary>
+    public abstract class TV
     {
-        public void On() { }
-        public void Off() { }
-        public void TuneChannel() { }
+        public abstract void On();
+        public abstract void Off();
+        public abstract void TuneChannel();
     }
 }
